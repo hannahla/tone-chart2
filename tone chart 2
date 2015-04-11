@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Home - Tone Chart2</title>
+</head>
+<body>
+
+<audio src="tones/tg2/115.5.wav"  id="115.5"></audio><p id= "115.5text">115.5</p><br>
+
+<audio src="tones/tg2/165.wav"  id="165"></audio><p id= "165text">165</p><br>
+
+<audio src="tones/tg2/99.wav"  id="99"></audio><p id= "99text">99</p><br>
+
+<audio src="tones/tg2/132.wav"  id="132"></audio><p id= "132text">132</p><br>
+
+<audio src="tones/tg2/148.5.wav"  id="148.5"></audio><p id= "148.5text">148.5</p><br>
+
+<audio src="tones/tg2/90.5.wav"  id="90.5"></audio><p id= "90.5text">90.5</p><br>
+
+<audio src="tones/tg2/107.25.wav"  id="107.25"></audio><p id= "107.25text">107.25</p><br>
+
+<audio src="tones/tg2/123.75.wav"  id="123.75"></audio><p id= "123.75text">123.75</p><br>
+
+
+
+</body>
+<script>
+var sounds = {
+  17 : '115.5',
+  18 : '165',
+  224 : '99',
+   32 : '132',
+   37 : '148.5',
+   38 : '90.75',
+  40 : '107.25',
+   39 : '123.75',
+
+   16 : '264',
+   90 : '280.5',
+   88 : '297',
+   67 : '313.5',
+   86 : '330',
+   66 : '346.5',
+   78 : '363',
+   77 : '396',
+   188 : '429',
+   190 : '462',
+   191 : '495',
+
+   20 : '286',
+   65 : '308',
+   83 : '352',
+   68 : '374',
+   70 : '418',
+   71 : '440',
+   72 : '484',
+
+   9 : '277.2',
+   81 : '290.4',
+   87 : '316.8',
+   69 : '343.2',
+   82 : '369.6',
+   84 : '422.4',
+   89 : '448.8',
+   85 : '475.2',
+   73 : '501.6',
+
+
+};
+document.onkeydown = function(e) {
+    var soundId = sounds[e.keyCode];
+    if (soundId) document.getElementById(soundId).play();
+    var text = document.getElementById((soundId) + "text");
+text.style.fontWeight = 'bold';
+}
+
+document.onkeyup = function(e) {
+    var soundId = sounds[e.keyCode];
+    if (soundId) document.getElementById(soundId).pause();
+    document.getElementById(soundId).load();
+    var text = document.getElementById((soundId) + "text");
+text.style.fontWeight = '';
+}
+</script>
